@@ -2,6 +2,7 @@
 import os
 import urllib.request, json
 import pandas as pd
+import numpy as np
 
 with urllib.request.urlopen("https://s3.amazonaws.com/oneonepsilon-database/database.json") as url:
     database = json.loads(url.read().decode())
@@ -23,7 +24,8 @@ nrow = data_df.count()
 ncol = len(columns)
 
 # Only use last hashtag
-df_new['newHashtags'] = df_new['hashTags'].str[-1]
+df_new['chosenHashtag'] = df_new['hashTags'].str[-1]
+df_new['newHashtag'] = np.nan  # New hashtag
 
 for j in range(0, ncol):  # Columns
     for k in range(0, nrow[j]):  # Rows in each column
@@ -33,14 +35,18 @@ for j in range(0, ncol):  # Columns
 
         # If a hashtag in our long list matches one in the our excel file,
         # it sets this hashtag to the corresponding column in our excel file
-        df_new['newHashtags'][df_new['newHashtags'] == y] = columns[j]
+        df_new['newHashtag'][df_new['chosenHashtag'] == y] = columns[j]
 
-
-print('This is the matrix:')
-print(df_new)
+print('Number of rows')
 print(df_new.count())
 
+# Drop rows that are not matched
+df_new = df_new.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
 
+print(df_new)
+print("Number of rows after removing unmatched hashtags")
+print(df_new.count())
 
-df_new.to_csv('newHashtag3.csv')
-df_new[['youtubeVideoId','newHashtags']].to_csv('newHashtags4.csv')
+# Saving to files
+df_new.to_csv('newHashtagsFull.csv')  # File with all the information
+df_new[['youtubeVideoId','newHashtag']].to_csv('newHashtags.csv')  # File with info needed to continue

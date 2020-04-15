@@ -6,9 +6,9 @@ from nltk import word_tokenize
 
 directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/'
 os.chdir(directory)
-data = pd.read_csv("newHashtags4.csv")
+data = pd.read_csv("newHashtags.csv")
 print(data.columns.ravel())  # In order to find titles of columns
-new_data = data[['youtubeVideoId', 'newHashtags']]
+new_data = data[['youtubeVideoId', 'newHashtag']]
 
 directory2 = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after clean 2'
 os.chdir(directory2)

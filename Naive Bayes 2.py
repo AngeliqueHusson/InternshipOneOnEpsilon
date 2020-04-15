@@ -15,7 +15,7 @@ directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Austr
 os.chdir(directory)
 data = pd.read_csv("HashtagText.csv")  # This file has ID, hashtag and text
 
-df = data[['youtubeVideoId', 'newHashtags', 'text']]
+df = data[['youtubeVideoId', 'newHashtag', 'text']]
 print(df[:20])
 print(df.shape)
 
@@ -42,7 +42,7 @@ print(tfidf.shape)
 
 ### Naive Bayes
 # You do not use the previously made tfidf matrix, so it seems unnecessary to make it?
-X_train, X_test, y_train, y_test = train_test_split(df['text'], df['newHashtags'], random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(df['text'], df['newHashtag'], random_state=0)
 
 X_train_counts = vectorizer.fit_transform(X_train)
 tfidf_transformer = TfidfTransformer()
