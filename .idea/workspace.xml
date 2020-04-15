@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5bb12ec9-ce3f-45df-9134-9ab76641a139" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZvUbPwYtxfg1Mk6TQ88PsBmJ1j" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\s157165\Documents\Jaar 5 2019-2020 Master\Internship Australia\InternshipOneOnEpsilon" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Naive Bayes 2">
+    <configuration name="Change Hashtags 2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Change Hashtags 2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Change Hashtags" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Change Hashtags.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="JoinTextToHashtag" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JoinTextToHashtag.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Naive Bayes 2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Naive Bayes 2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Naive Bayes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Naive Bayes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Naive Bayes 2" />
+        <item itemvalue="Python.Naive Bayes" />
+        <item itemvalue="Python.JoinTextToHashtag" />
+        <item itemvalue="Python.Change Hashtags 2" />
+        <item itemvalue="Python.Change Hashtags" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bb12ec9-ce3f-45df-9134-9ab76641a139" name="Default Changelist" comment="" />
+      <created>1585547707161</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585547707161</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585808255403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585808255403" />
+    <state x="794" y="164" key="FileChooserDialogImpl" timestamp="1585808297669">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="794" y="164" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585808297669" />
+    <state width="1493" height="138" key="GridCell.Tab.0.bottom" timestamp="1586915230907">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="138" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586915230907" />
+    <state width="1493" height="138" key="GridCell.Tab.0.center" timestamp="1586915230906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="138" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586915230906" />
+    <state width="1493" height="138" key="GridCell.Tab.0.left" timestamp="1586915230906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="138" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586915230906" />
+    <state width="1493" height="138" key="GridCell.Tab.0.right" timestamp="1586915230907">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="138" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586915230907" />
+    <state width="746" height="261" key="GridCell.Tab.1.bottom" timestamp="1586399525729">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586399525729" />
+    <state width="746" height="261" key="GridCell.Tab.1.center" timestamp="1586399525728">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586399525728" />
+    <state width="746" height="261" key="GridCell.Tab.1.left" timestamp="1586399525728">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586399525728" />
+    <state width="746" height="261" key="GridCell.Tab.1.right" timestamp="1586399525728">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="746" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586399525728" />
+    <state x="260" y="57" key="SettingsEditor" timestamp="1586489466340">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="260" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586489466340" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586826999557">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586826999557" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586677668187">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586677668187" />
+  </component>
+</project>
