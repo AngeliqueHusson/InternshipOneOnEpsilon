@@ -31,12 +31,29 @@ for i in filelist:
 
 
 # Merge data by the video ID
-fulldf = pd.merge(new_data, matrixdf2, on='youtubeVideoId')
+
+# for df in (new_data, matrixdf2):
+#     # Strip the column(s) you're planning to join with
+#     df['youtubeVideoId'] = df['youtubeVideoId'].str.strip()
+
+new = pd.concat([new_data, matrixdf2], keys='youtubeVideoId')
+print(new.count())
+
+
+fulldf = pd.merge(new_data, matrixdf2, on='youtubeVideoId', validate='many_to_many', indicator=True)
 print(fulldf)
 print(new_data.count())
 print(matrixdf2.count())
 print(fulldf.count())  # Final dataset has less values?
 
+#new_data.join(matrixdf2, on='youtubeVideoId')
+
+print(new_data)
+
 # Save file as csv file
 os.chdir(directory)
 fulldf.to_csv('HashtagText.csv')
+new.to_csv('test.csv')
+
+
+
