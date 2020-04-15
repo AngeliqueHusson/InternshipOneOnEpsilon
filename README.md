@@ -3,10 +3,10 @@
  This repository is a continuation of the existing repository:
  https://github.com/donghui435/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles-
 
-##YouTube video info download (including title/channel/autogmatically generated subtitles)
+## YouTube video info download (including title/channel/autogmatically generated subtitles)
 This repository demonstrates how to downnload YouTube video's subtitle and information using video ID. It also includes some subtitle cleaning process and NLP analysis.
 
-##Video ID dataset
+### Video ID dataset
 The data this project using is from One On Epsilon. This is the data file URL which is in a json format: https://s3.amazonaws.com/oneonepsilon-database/database.json There are 1504 video IDs in total, including 106 null-subtitle files. All the video IDs are stored at file VideoID.txt which has been Pickle serialized. So do remember unpickling when you use the data.
 
 with open("VideoID.txt", "rb") as fp:   # Unpickling
@@ -16,11 +16,11 @@ The subtitles download is using youtube-transcript-api function created by jdepo
 
 For the video info downloading, you need to apply your own YouTube Data API key in order to have access. Link below shows the instruction to apply YouTube Data API(you will need to have an google account): https://console.developers.google.com/
 
-###Subtitle part
+### Subtitle part
 The code is using data format of YouTube video ID which is a single column attribute It will output the sustitle in txt format for each video, and if the video has no subtitle, the output will be null + the video ID example: FGn2jtCjyvo.txt Null_0A83skSAxKI.txt Each txt file will be a text string and they are stored at Data/Caption
 
-###Video info part
+### Video info part
 This code is using the same dataset as the subtitle using, and output is a json file with all the information for each video, all the output is stored at Data/video_info
 
-###Data cleaning
+### Data cleaning
 In the downloaded subtitle files, there are some words connected to each other without space. Therefore, spell checking will apply and two connected words should be splitted. Stopword is also applied during cleaning process. The code file is Data cleaning.py and the output result is under Data/Caption after clean
