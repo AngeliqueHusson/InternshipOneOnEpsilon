@@ -39,20 +39,20 @@ tfidf = transformer.fit_transform(counts).toarray()
 print(tfidf)
 print(tfidf.shape)
 
-
 ### Naive Bayes
 # You do not use the previously made tfidf matrix, so it seems unnecessary to make it?
-X_train, X_test, y_train, y_test = train_test_split(df['text'], df['newHashtag'], random_state=0)
+training = pd.read_csv("training.csv")
+validation = pd.read_csv("validation.csv")
 
-X_train_counts = vectorizer.fit_transform(X_train)
+x_train_counts = vectorizer.fit_transform(training['x_train'])
 tfidf_transformer = TfidfTransformer()
-X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
+x_train_tfidf = tfidf_transformer.fit_transform(x_train_counts)
 
-clf = MultinomialNB().fit(X_train_tfidf, y_train)
+clf = MultinomialNB().fit(x_train_tfidf, training['y_train'])
 
-predicted = clf.predict(vectorizer.transform(X_test))
-print(predicted == y_test)
+predicted = clf.predict(vectorizer.transform(validation['x_val']))
+print(predicted == validation['y_val'])
 print(predicted)
 
-result = clf.score(vectorizer.transform(X_test), y_test, sample_weight=None)
+result = clf.score(vectorizer.transform(validation['x_val']), validation['y_val'], sample_weight=None)
 print("The score of Multinomial Naive Bayes is: " + str(result))

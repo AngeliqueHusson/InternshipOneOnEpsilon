@@ -1,10 +1,12 @@
 """
 This file joins the file with the hashtags and the file with the text using the videoId
+It also initializes a training, validation and test set.
 """
 
 import os
 import pandas as pd
 from nltk import word_tokenize
+from sklearn.model_selection import train_test_split
 
 directory = os.getcwd()
 print(directory)
@@ -43,7 +45,7 @@ for i in filelist:
 new = pd.concat([new_data, matrixdf2], keys='youtubeVideoId')
 print(new.count())
 
-fulldf = pd.merge(new_data, matrixdf2, on='youtubeVideoId', validate='many_to_many', indicator=True)
+fulldf = pd.merge(new_data, matrixdf2, on='youtubeVideoId', validate='one_to_one', indicator=True)
 print(fulldf)
 print(new_data.count())
 print(matrixdf2.count())
@@ -51,5 +53,21 @@ print(fulldf.count())  # Final dataset has less values?
 
 # Save file as csv file
 os.chdir(directory)
-fulldf.to_csv('Data/HashtagText.csv')
-new.to_csv('Data/test.csv')
+fulldf.to_csv('Data/HashtagText.csv')  # Complete csv file with all information
+new.to_csv('Data/identifying_videos_without_text.csv')
+
+# Splitting and saving training, validation and test set data
+x_trainBig, x_test, y_trainBig, y_test = train_test_split(fulldf['text'], fulldf['newHashtag'], test_size=0.2, random_state=60)
+x_train, x_val, y_train, y_val = train_test_split(x_trainBig, y_trainBig, test_size=0.2, random_state=12)
+
+# Training set
+trainingdf = pd.DataFrame({'x_train': x_train, 'y_train': y_train})
+trainingdf.to_csv('Data/training.csv')
+
+# Validation set
+validationdf = pd.DataFrame({'x_val': x_val, 'y_val': y_val})
+validationdf.to_csv('Data/validation.csv')
+
+# Testing set
+testingdf = pd.DataFrame({'x_test': x_test, 'y_test': y_test})
+testingdf.to_csv('Data/testing.csv')

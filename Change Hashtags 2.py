@@ -31,7 +31,6 @@ for j in range(0, ncol):  # Columns
     for k in range(0, nrow[j]):  # Rows in each column
         x = data_df.loc[:, columns[j]].values[k]
         x = str(x)
-        y = str('#'+x)
 
         # If a hashtag in our long list matches one in the our excel file,
         # it sets this hashtag to the corresponding column in our excel file
