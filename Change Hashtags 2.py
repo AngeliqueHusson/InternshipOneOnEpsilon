@@ -34,7 +34,7 @@ for j in range(0, ncol):  # Columns
 
         # If a hashtag in our long list matches one in the our excel file,
         # it sets this hashtag to the corresponding column in our excel file
-        df_new['newHashtag'][df_new['chosenHashtag'] == y] = columns[j]
+        df_new['newHashtag'][df_new['chosenHashtag'] == x] = columns[j]
 
 print('Number of rows')
 print(df_new.count())
