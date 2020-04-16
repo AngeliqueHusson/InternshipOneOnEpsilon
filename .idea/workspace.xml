@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb12ec9-ce3f-45df-9134-9ab76641a139" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Change Hashtags 2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Change Hashtags 2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Hashtags.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Hashtags.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/newHashtags.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/newHashtags.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/newHashtagsFull.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/newHashtagsFull.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Change Hashtags 2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data cleaning 2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data cleaning 2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/HashtagText.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/HashtagText.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/identifying_videos_without_text.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/identifying_videos_without_text.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/testing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/testing.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/training.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/validation.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JoinTextToHashtag.py" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTextToHashtag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Naive Bayes 2.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +36,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Files/Naive Bayes.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -39,7 +45,7 @@
       <recent name="C:\Users\s157165\Documents\Jaar 5 2019-2020 Master\Internship Australia\InternshipOneOnEpsilon" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Change Hashtags 2">
+  <component name="RunManager" selected="Python.Naive Bayes 2">
     <configuration name="Change Hashtags 2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="InternshipOneOnEpsilon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,9 +153,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Change Hashtags 2" />
         <item itemvalue="Python.Naive Bayes 2" />
         <item itemvalue="Python.JoinTextToHashtag" />
+        <item itemvalue="Python.Change Hashtags 2" />
         <item itemvalue="Python.VideoInfoDownload" />
         <item itemvalue="Python.UnpickleVideoID" />
       </list>
@@ -173,26 +179,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585808255403" />
-    <state x="794" y="164" key="FileChooserDialogImpl" timestamp="1586936354663">
+    <state x="794" y="164" key="FileChooserDialogImpl" timestamp="1587022107543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="794" y="164" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586936354663" />
-    <state width="861" height="272" key="GridCell.Tab.0.bottom" timestamp="1587018918383">
+    <state x="794" y="164" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587022107543" />
+    <state width="861" height="212" key="GridCell.Tab.0.bottom" timestamp="1587022540036">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="272" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587018918383" />
-    <state width="861" height="272" key="GridCell.Tab.0.center" timestamp="1587018918383">
+    <state width="861" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
+    <state width="861" height="212" key="GridCell.Tab.0.center" timestamp="1587022540036">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="272" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587018918383" />
-    <state width="861" height="272" key="GridCell.Tab.0.left" timestamp="1587018918383">
+    <state width="861" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
+    <state width="861" height="212" key="GridCell.Tab.0.left" timestamp="1587022540036">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="272" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587018918383" />
-    <state width="861" height="272" key="GridCell.Tab.0.right" timestamp="1587018918383">
+    <state width="861" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
+    <state width="861" height="212" key="GridCell.Tab.0.right" timestamp="1587022540036">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="272" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587018918383" />
+    <state width="861" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
     <state width="746" height="261" key="GridCell.Tab.1.bottom" timestamp="1586399525729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

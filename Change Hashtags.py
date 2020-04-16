@@ -1,3 +1,8 @@
+"""
+ Changing initial 760 Hashtags to the newly created hashtags
+ Run this file after the Data cleaning steps
+"""
+
 # Changing the Hashtags to the new hashtags
 import os
 import urllib.request, json

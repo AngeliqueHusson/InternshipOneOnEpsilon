@@ -1,6 +1,8 @@
 """
 This file joins the file with the hashtags and the file with the text using the videoId
 It also initializes a training, validation and test set.
+
+Run this file after changing the hashtags in 'Change Hashtags.py'
 """
 
 import os

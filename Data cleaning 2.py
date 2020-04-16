@@ -1,3 +1,8 @@
+"""
+Stemming method and further data cleaning
+Run this file after 'Data Cleaning.py'
+"""
+
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 import nltk
