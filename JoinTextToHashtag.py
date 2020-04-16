@@ -1,15 +1,19 @@
-import re
+"""
+This file joins the file with the hashtags and the file with the text using the videoId
+"""
+
 import os
 import pandas as pd
-import numpy as np
 from nltk import word_tokenize
 
-directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/'
-os.chdir(directory)
-data = pd.read_csv("newHashtags.csv")
+directory = os.getcwd()
+print(directory)
+
+data = pd.read_csv("Data/newHashtags.csv")
 print(data.columns.ravel())  # In order to find titles of columns
 new_data = data[['youtubeVideoId', 'newHashtag']]
 
+# Choose your own directory here
 directory2 = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after clean 2'
 os.chdir(directory2)
 filelist = os.listdir(directory2)
@@ -19,7 +23,7 @@ matrixdf = pd.DataFrame(columns=['youtubeVideoId', 'text'])
 
 for i in filelist:
     with open(i, encoding='gb18030', errors='ignore') as file:
-        textString = file.read().replace('/n','')
+        textString = file.read().replace('/n', '')
         words = word_tokenize(textString)
 
         # Removing the .txt characters of the file string
@@ -39,21 +43,13 @@ for i in filelist:
 new = pd.concat([new_data, matrixdf2], keys='youtubeVideoId')
 print(new.count())
 
-
 fulldf = pd.merge(new_data, matrixdf2, on='youtubeVideoId', validate='many_to_many', indicator=True)
 print(fulldf)
 print(new_data.count())
 print(matrixdf2.count())
 print(fulldf.count())  # Final dataset has less values?
 
-#new_data.join(matrixdf2, on='youtubeVideoId')
-
-print(new_data)
-
 # Save file as csv file
 os.chdir(directory)
-fulldf.to_csv('HashtagText.csv')
-new.to_csv('test.csv')
-
-
-
+fulldf.to_csv('Data/HashtagText.csv')
+new.to_csv('Data/test.csv')

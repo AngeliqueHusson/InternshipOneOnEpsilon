@@ -11,9 +11,6 @@ import json
 import pickle
 from urllib.request import urlopen
 
-cwd = os.getcwd()
-print(cwd)
-
 ### Key.txt includes my YouTube API key
 file = open("Data/Key.txt")
 key = (file.read()).rstrip("\n")
