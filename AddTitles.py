@@ -29,16 +29,17 @@ for i in filelist:
     with open(i, errors='ignore') as file:
         data = json.load(file)
         for j in data['items']:
-            title1 = j['snippet']['title']
+            title = j['snippet']['title']
+            title = str(title)
 
-            textString = title1.replace('/n', '')
-            title = word_tokenize(textString)
+            # textString = title1.replace('/n', '')
+            # title = word_tokenize(textString)
 
             # Removing the .txt characters of the file string
             id = str(i)
             id = id[:-5]
 
-            matrixdf2 = matrixdf.append({'youtubeVideoId': id, 'title': title+title+title}, ignore_index=True)
+            matrixdf2 = matrixdf.append({'youtubeVideoId': id, 'title': title+' '+title+' '+title}, ignore_index=True)
             matrixdf = matrixdf2
 
 
@@ -59,12 +60,13 @@ for i in filelist:
         id = id[:-4]
 
         for k in range(0, nrow):
-            if id == matrixdf.loc[:, 0].values[k]:
-                k2 = matrixdf.loc[k,1]
-                k3 = str(k2)
-                x = matrixdf.loc[k3, 'title']
-                print(x)
+            if id == matrixdf.loc[:, 'youtubeVideoId'].values[k]:
+                x = matrixdf.loc[k,'title']
+                x = str(x)
                 words.append(x)
+                #words = str(words)
+
+
 
 
 
