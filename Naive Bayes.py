@@ -1,6 +1,8 @@
 """
-Naive Bayes Method using the tf-idf feature extraction method
-This file uses as input the file created in the 'JoinTextTohashtag.py' file.
+    Naive Bayes Method using the tf-idf feature extraction method
+    This file uses as input the file created in the 'JoinTextTohashtag.py' file.
+
+    @authors Angelique Husson & Nikki Leijnse
 """
 
 # Naive Bayes method
@@ -12,11 +14,6 @@ from sklearn.naive_bayes import MultinomialNB
 # Directory and data import
 directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data'
 os.chdir(directory)
-data = pd.read_csv("HashtagText.csv")  # This file has ID, hashtag and text
-
-df = data[['youtubeVideoId', 'newHashtag', 'text']]
-print(df[:10])
-print(df.shape)
 
 ### Naive Bayes
 # Feature space = tf - idf method

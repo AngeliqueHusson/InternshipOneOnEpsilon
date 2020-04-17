@@ -1,6 +1,8 @@
+"""
+    Adding video titles to caption text, in order to include in feature selection
 
-# Step 1:
-# Obtain tiles
+    @authors Angelique Husson & Nikki Leijnse
+"""
 
 import nltk
 import re
@@ -10,9 +12,6 @@ import json
 import pandas as pd
 from nltk.tokenize import word_tokenize
 
-# Porter stemming method
-
-# I do not know if this is important
 findtxt = re.compile(r'[0-9a-zA-Z]+\.json')
 findtxt.findall(r'new.json*****new.json')
 
@@ -32,13 +31,11 @@ for i in filelist:
             title = j['snippet']['title']
             title = str(title)
 
-            # textString = title1.replace('/n', '')
-            # title = word_tokenize(textString)
-
-            # Removing the .txt characters of the file string
+            # Removing the .json characters of the file string
             id = str(i)
             id = id[:-5]
 
+            # Put more weight on titles, in this case they weigh 3 times more than the text.
             matrixdf2 = matrixdf.append({'youtubeVideoId': id, 'title': title+' '+title+' '+title}, ignore_index=True)
             matrixdf = matrixdf2
 
@@ -48,7 +45,7 @@ os.chdir(directory2)
 filelist = os.listdir(directory2)
 
 nrow = len(matrixdf)
-print(nrow)
+print(nrow)  # Less than 1504
 
 for i in filelist:
     with open(i,errors='ignore') as file:
@@ -59,16 +56,12 @@ for i in filelist:
         id = str(i)
         id = id[:-4]
 
+        # Check for matching video id
         for k in range(0, nrow):
             if id == matrixdf.loc[:, 'youtubeVideoId'].values[k]:
-                x = matrixdf.loc[k,'title']
+                x = matrixdf.loc[k, 'title']
                 x = str(x)
-                words.append(x)
-                #words = str(words)
-
-
-
-
+                words.append(x)  # Adding the titles to the captions
 
     # write into new file
     new_path = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption title'

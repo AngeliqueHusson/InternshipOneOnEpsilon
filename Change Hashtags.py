@@ -1,6 +1,8 @@
 """
  Changing initial 760 Hashtags to the newly created hashtags
  Run this file after the Data cleaning steps
+
+ @authors Angelique Husson & Nikki Leijnse
 """
 
 # Changing the Hashtags to the new hashtags

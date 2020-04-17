@@ -1,8 +1,10 @@
 """
-This file joins the file with the hashtags and the file with the text using the videoId
-It also initializes a training, validation and test set.
+    This file joins the file with the hashtags and the file with the text using the videoId
+    It also initializes a training, validation and test set.
 
-Run this file after changing the hashtags in 'Change Hashtags.py'
+    Run this file after changing the hashtags in 'Change Hashtags.py'
+
+    @authors Angelique Husson & Nikki Leijnse
 """
 
 import os
@@ -38,15 +40,11 @@ for i in filelist:
         matrixdf = matrixdf2
 
 
-# Merge data by the video ID
-
-# for df in (new_data, matrixdf2):
-#     # Strip the column(s) you're planning to join with
-#     df['youtubeVideoId'] = df['youtubeVideoId'].str.strip()
-
+# Testing which videos are not merged
 new = pd.concat([new_data, matrixdf2], keys='youtubeVideoId')
 print(new.count())
 
+# Merge data by the video ID
 fulldf = pd.merge(new_data, matrixdf2, on='youtubeVideoId', validate='one_to_one', indicator=True)
 print(fulldf)
 print(new_data.count())

@@ -1,7 +1,14 @@
+"""
+    Data cleaning; removing stop words and dividing connected words
+    @author Hui Dong
+"""
 
 import re
 import os
 import string
+# nltk.download('words')
+# nltk.download('stopwords')
+# nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.corpus import words
@@ -9,8 +16,8 @@ from nltk.corpus import words
 findtxt = re.compile(r'[0-9a-zA-Z]+\.txt')
 findtxt.findall(r'new.txt*****new.txt')
 
-os.chdir('E:/UQ/DATA7901/Project/Caption/')
-filelist = os.listdir('E:/UQ/DATA7901/Project/Caption/')
+os.chdir('C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption title/')
+filelist = os.listdir('C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption title/')
 
 ### hash table implemtation of dictionary
 My_dict = {}
@@ -53,7 +60,7 @@ for i in filelist:
     clean_sentence = [word for word in list1 if word.lower() not in stopwords.words('english')]
     
     ### write into new file
-    new_path = 'E:/UQ/DATA7901/Project/Caption after clean/'
+    new_path = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after clean/'
     new_text = ' '.join(clean_sentence)
     file_name = os.path.join(new_path, i)
     f = open(file_name, 'w')
