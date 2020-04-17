@@ -6,15 +6,13 @@ Run this file after 'Data Cleaning.py'
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 import nltk
-nltk.download('punkt')
+# nltk.download('punkt')
 import re
 import os
 
 # Porter stemming method
 ps = PorterStemmer()
 
-# I do not know if this is important
-# VRAGEN!
 findtxt = re.compile(r'[0-9a-zA-Z]+\.txt')
 findtxt.findall(r'new.txt*****new.txt')
 
@@ -25,7 +23,7 @@ filelist = os.listdir(directory)
 print(filelist)
 
 for i in filelist:
-    with open(i, encoding='gb18030', errors='ignore') as file:
+    with open(i, errors='ignore') as file:
         textString = file.read().replace('/n','')
         words = word_tokenize(textString)
         list = []
