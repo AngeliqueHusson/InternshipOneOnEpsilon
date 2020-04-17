@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb12ec9-ce3f-45df-9134-9ab76641a139" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AddTitles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Change Hashtags 2.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Data cleaning 2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data cleaning 2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/HashtagText.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/HashtagText.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/identifying_videos_without_text.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/identifying_videos_without_text.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/testing.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/testing.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/training.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/training.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/validation.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/validation.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JoinTextToHashtag.py" beforeDir="false" afterPath="$PROJECT_DIR$/JoinTextToHashtag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Naive Bayes 2.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +38,28 @@
       <recent name="C:\Users\s157165\Documents\Jaar 5 2019-2020 Master\Internship Australia\InternshipOneOnEpsilon" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Naive Bayes 2">
+  <component name="RunManager" selected="Python.AddTitles">
+    <configuration name="AddTitles" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AddTitles.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Change Hashtags 2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="InternshipOneOnEpsilon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,7 +123,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="UnpickleVideoID" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Naive Bayes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="InternshipOneOnEpsilon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,28 +135,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UnpickleVideoID.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="VideoInfoDownload" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="InternshipOneOnEpsilon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VideoInfoDownload.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Naive Bayes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.AddTitles" />
+        <item itemvalue="Python.Naive Bayes" />
         <item itemvalue="Python.Naive Bayes 2" />
         <item itemvalue="Python.JoinTextToHashtag" />
         <item itemvalue="Python.Change Hashtags 2" />
-        <item itemvalue="Python.VideoInfoDownload" />
-        <item itemvalue="Python.UnpickleVideoID" />
       </list>
     </recent_temporary>
   </component>
@@ -179,26 +172,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585808255403" />
-    <state x="794" y="164" key="FileChooserDialogImpl" timestamp="1587022107543">
+    <state x="794" y="164" key="FileChooserDialogImpl" timestamp="1587088375289">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="794" y="164" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587022107543" />
-    <state width="861" height="212" key="GridCell.Tab.0.bottom" timestamp="1587022540036">
+    <state x="794" y="164" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587088375289" />
+    <state width="1085" height="250" key="GridCell.Tab.0.bottom" timestamp="1587093176249">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
-    <state width="861" height="212" key="GridCell.Tab.0.center" timestamp="1587022540036">
+    <state width="1085" height="250" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587093176249" />
+    <state width="1085" height="250" key="GridCell.Tab.0.center" timestamp="1587093176248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
-    <state width="861" height="212" key="GridCell.Tab.0.left" timestamp="1587022540036">
+    <state width="1085" height="250" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587093176248" />
+    <state width="1085" height="250" key="GridCell.Tab.0.left" timestamp="1587093176248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
-    <state width="861" height="212" key="GridCell.Tab.0.right" timestamp="1587022540036">
+    <state width="1085" height="250" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587093176248" />
+    <state width="1085" height="250" key="GridCell.Tab.0.right" timestamp="1587093176248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="861" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587022540036" />
+    <state width="1085" height="250" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587093176248" />
     <state width="746" height="261" key="GridCell.Tab.1.bottom" timestamp="1586399525729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -219,13 +212,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="308" y="84" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587001950989" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586999443450">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587084963145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586999443450" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587000983724">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587084963145" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587089151463">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587000983724" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587089151463" />
   </component>
 </project>

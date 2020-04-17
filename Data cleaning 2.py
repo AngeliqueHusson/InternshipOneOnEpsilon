@@ -14,6 +14,7 @@ import os
 ps = PorterStemmer()
 
 # I do not know if this is important
+# VRAGEN!
 findtxt = re.compile(r'[0-9a-zA-Z]+\.txt')
 findtxt.findall(r'new.txt*****new.txt')
 
@@ -30,7 +31,7 @@ for i in filelist:
         list = []
 
         for w in words:
-           x = ps.stem(w) # Stemming method
+           x = ps.stem(w)  # Stemming method
            list.append(x)
 
     # write into new file
