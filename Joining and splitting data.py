@@ -62,12 +62,15 @@ x_train, x_val, y_train, y_val = train_test_split(x_trainBig, y_trainBig, test_s
 
 # Training set
 trainingdf = pd.DataFrame({'x_train': x_train, 'y_train': y_train})
+print(trainingdf.count())
 trainingdf.to_csv('Data/training.csv')
 
 # Validation set
 validationdf = pd.DataFrame({'x_val': x_val, 'y_val': y_val})
+print(validationdf.count())
 validationdf.to_csv('Data/validation.csv')
 
 # Testing set
 testingdf = pd.DataFrame({'x_test': x_test, 'y_test': y_test})
+print(testingdf.count())
 testingdf.to_csv('Data/testing.csv')
