@@ -13,6 +13,7 @@ from nltk import word_tokenize
 from sklearn.model_selection import train_test_split
 
 directory = os.getcwd()
+directory = "C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/"
 print(directory)
 
 data = pd.read_csv("Data/newHashtags.csv")

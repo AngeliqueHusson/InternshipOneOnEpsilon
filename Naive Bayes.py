@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn import metrics
 from sklearn.model_selection import cross_val_score
-
+# from Feature_extraction import x_train_tfidf1, x_train_tfidf, vectorizer, vectorizer1
 from Joining_and_splitting_data import category_id_df
 
 # Directory and data import
@@ -68,18 +68,16 @@ plt.xlabel('Predicted')
 plt.show()
 
 # Cross validation
-
 entries = []
-
 accuracies = cross_val_score(MultinomialNB(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy')
+model_name = "Naive Bayes"
 
 for fold_idx, accuracy in enumerate(accuracies):
-  entries.append(("model_name", fold_idx, accuracy))
-cv_df = pd.DataFrame(entries, columns=['model_name', 'fold_idx', 'accuracy'])
+  entries.append(("", fold_idx, accuracy))
+cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
 
-sns.boxplot(x='model_name', y='accuracy', data=cv_df)
-sns.stripplot(x='model_name', y='accuracy', data=cv_df,
-              size=8, jitter=True, edgecolor="gray", linewidth=2)
+sns.boxplot(x=model_name, y='accuracy', data=cv_df)
+sns.stripplot(x=model_name, y='accuracy', data=cv_df, size=8, jitter=True, edgecolor="gray", linewidth=2)
 plt.show()
 
 print(cv_df.accuracy.mean())
