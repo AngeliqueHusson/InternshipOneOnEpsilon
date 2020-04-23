@@ -5,7 +5,6 @@ import os
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer, TfidfTransformer, CountVectorizer
 
-
 # Directory and data import
 directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data'
 os.chdir(directory)
@@ -25,7 +24,7 @@ x_train_counts1 = vectorizer1.fit_transform(trainingBig['x_trainBig'])
 tfidf_transformer1 = TfidfTransformer()
 x_train_tfidf1 = tfidf_transformer1.fit_transform(x_train_counts1)
 
-print('Feature selection matrix:')
-print(x_train_tfidf[:2, :1000])
-print(x_train_tfidf.shape)
-print(vectorizer.get_feature_names())
+# print('Feature selection matrix:')
+# print(x_train_tfidf[:2, :1000])
+# print(x_train_tfidf.shape)
+# print(vectorizer.get_feature_names())

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb12ec9-ce3f-45df-9134-9ab76641a139" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Feature_extraction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Feature_extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Feature_extraction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Joining_and_splitting_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Joining_and_splitting_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logistic Regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logistic Regression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Naive Bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Naive Bayes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Random Forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Random Forest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SVM.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,70 +45,7 @@
       <recent name="C:\Users\s157165\Documents\Jaar 5 2019-2020 Master\Internship Australia\InternshipOneOnEpsilon" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Naive Bayes">
-    <configuration name="Correlations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="InternshipOneOnEpsilon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Correlations.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Feature_extraction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="InternshipOneOnEpsilon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Feature_extraction.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Joining and splitting data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="InternshipOneOnEpsilon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Joining and splitting data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.Logistic Regression">
     <configuration name="Joining_and_splitting_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="InternshipOneOnEpsilon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,6 +59,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Joining_and_splitting_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Logistic Regression" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Logistic Regression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,13 +109,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Random Forest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Random Forest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SVM" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InternshipOneOnEpsilon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SVM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Logistic Regression" />
+        <item itemvalue="Python.Random Forest" />
+        <item itemvalue="Python.SVM" />
         <item itemvalue="Python.Naive Bayes" />
         <item itemvalue="Python.Joining_and_splitting_data" />
-        <item itemvalue="Python.Feature_extraction" />
-        <item itemvalue="Python.Joining and splitting data" />
-        <item itemvalue="Python.Correlations" />
       </list>
     </recent_temporary>
   </component>
@@ -193,22 +196,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="794" y="164" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587613383659" />
-    <state width="1082" height="304" key="GridCell.Tab.0.bottom" timestamp="1587616318784">
+    <state width="1082" height="243" key="GridCell.Tab.0.bottom" timestamp="1587619120284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1082" height="304" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587616318784" />
-    <state width="1082" height="304" key="GridCell.Tab.0.center" timestamp="1587616318784">
+    <state width="1082" height="243" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587619120284" />
+    <state width="1082" height="243" key="GridCell.Tab.0.center" timestamp="1587619120284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1082" height="304" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587616318784" />
-    <state width="1082" height="304" key="GridCell.Tab.0.left" timestamp="1587616318784">
+    <state width="1082" height="243" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587619120284" />
+    <state width="1082" height="243" key="GridCell.Tab.0.left" timestamp="1587619120284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1082" height="304" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587616318784" />
-    <state width="1082" height="304" key="GridCell.Tab.0.right" timestamp="1587616318784">
+    <state width="1082" height="243" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587619120284" />
+    <state width="1082" height="243" key="GridCell.Tab.0.right" timestamp="1587619120284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1082" height="304" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587616318784" />
+    <state width="1082" height="243" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587619120284" />
     <state width="746" height="261" key="GridCell.Tab.1.bottom" timestamp="1586399525729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -14,7 +14,7 @@ from sklearn.model_selection import train_test_split
 
 directory = os.getcwd()
 directory = "C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/"
-print(directory)
+os.chdir(directory)
 
 data = pd.read_csv("Data/newHashtags.csv")
 print(data.columns.ravel())  # In order to find titles of columns
@@ -60,6 +60,7 @@ print(fulldf.head())
 
 # Save file as csv file
 os.chdir(directory)
+category_id_df.to_csv('Data/category_id_df.csv')
 fulldf.to_csv('Data/HashtagText.csv')  # Complete csv file with all information
 new.to_csv('Data/identifying_videos_without_text.csv')
 
