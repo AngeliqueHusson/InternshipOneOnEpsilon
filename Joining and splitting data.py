@@ -51,13 +51,19 @@ print(new_data.count())
 print(matrixdf2.count())
 print(fulldf.count())  # Final dataset has less values?
 
+fulldf['y_id'] = fulldf['newHashtag'].factorize()[0]
+category_id_df = fulldf[['newHashtag', 'y_id']].drop_duplicates().sort_values('y_id')
+# category_to_id = dict(category_id_df.values)
+# id_to_category = dict(category_id_df[['y_id', 'newHashtag']].values)
+print(fulldf.head())
+
 # Save file as csv file
 os.chdir(directory)
 fulldf.to_csv('Data/HashtagText.csv')  # Complete csv file with all information
 new.to_csv('Data/identifying_videos_without_text.csv')
 
 # Splitting and saving training, validation and test set data
-x_trainBig, x_test, y_trainBig, y_test = train_test_split(fulldf['text'], fulldf['newHashtag'], test_size=0.2, random_state=60)
+x_trainBig, x_test, y_trainBig, y_test = train_test_split(fulldf['text'], fulldf['y_id'], test_size=0.2, random_state=60)
 x_train, x_val, y_train, y_val = train_test_split(x_trainBig, y_trainBig, test_size=0.2, random_state=12)
 
 # Big training set: training and validation set combined
