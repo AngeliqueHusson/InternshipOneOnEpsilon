@@ -60,6 +60,11 @@ new.to_csv('Data/identifying_videos_without_text.csv')
 x_trainBig, x_test, y_trainBig, y_test = train_test_split(fulldf['text'], fulldf['newHashtag'], test_size=0.2, random_state=60)
 x_train, x_val, y_train, y_val = train_test_split(x_trainBig, y_trainBig, test_size=0.2, random_state=12)
 
+# Big training set: training and validation set combined
+trainingbig = pd.DataFrame({'x_trainBig': x_trainBig, 'y_trainBig': y_trainBig})
+print(trainingbig.count())
+trainingbig.to_csv('Data/trainingbig.csv')
+
 # Training set
 trainingdf = pd.DataFrame({'x_train': x_train, 'y_train': y_train})
 print(trainingdf.count())
