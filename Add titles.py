@@ -23,6 +23,7 @@ print(len(filelist))
 
 # Initialize empty dataframe
 matrixdf = pd.DataFrame(columns=['youtubeVideoId', 'title'])
+ntitle = 3  # How many times do you want to add the title?
 
 for i in filelist:
     with open(i, errors='ignore') as file:
@@ -35,8 +36,10 @@ for i in filelist:
             id = str(i)
             id = id[:-5]
 
+            # Adding title
+            title1 = title+' '
             # Put more weight on titles, in this case they weigh 3 times more than the text.
-            matrixdf2 = matrixdf.append({'youtubeVideoId': id, 'title': title+' '+title+' '+title}, ignore_index=True)
+            matrixdf2 = matrixdf.append({'youtubeVideoId': id, 'title': ntitle*title}, ignore_index=True)
             matrixdf = matrixdf2
 
 

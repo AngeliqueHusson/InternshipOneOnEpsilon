@@ -7,7 +7,7 @@ import seaborn as sns
 from sklearn import metrics
 from sklearn.model_selection import cross_val_score
 from sklearn.svm import LinearSVC
-from Feature_extraction import x_train_tfidf1, x_train_tfidf, vectorizer, vectorizer1
+from Feature_extraction import x_train_tfidf1, x_train_tfidf, vectorizer
 
 # Directory and data import
 # Change to your own directory
@@ -50,7 +50,7 @@ plt.show()
 
 # Cross validation
 entries = []
-accuracies = cross_val_score(LinearSVC(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy')
+accuracies = cross_val_score(LinearSVC(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=11)
 model_name = "SVM"
 
 for fold_idx, accuracy in enumerate(accuracies):
