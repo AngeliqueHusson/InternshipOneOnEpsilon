@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5bb12ec9-ce3f-45df-9134-9ab76641a139" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Naive Bayes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Naive Bayes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logistic Regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logistic Regression.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Random Forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Random Forest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SVM.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
