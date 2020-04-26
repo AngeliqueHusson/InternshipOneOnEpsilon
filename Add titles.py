@@ -4,56 +4,32 @@
     @authors Angelique Husson & Nikki Leijnse
 """
 
-import nltk
-import re
 import os
-import string
-import json
 import pandas as pd
 from nltk.tokenize import word_tokenize
 
-findtxt = re.compile(r'[0-9a-zA-Z]+\.json')
-findtxt.findall(r'new.json*****new.json')
+# Set percentage that the title should account for in feature selection
+percentage = 10
 
-# Data import
-directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/video_info'
+# Retrieve file with titles
+directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data'
+os.chdir(directory)
+
+df = pd.read_csv("titles.csv")
+nrow = len(df)
+
+# Combining titles and captions
+directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/Caption after clean'
 os.chdir(directory)
 filelist = os.listdir(directory)
-print(len(filelist))
-
-# Initialize empty dataframe
-matrixdf = pd.DataFrame(columns=['youtubeVideoId', 'title'])
-ntitle = 3  # How many times do you want to add the title?
-
-for i in filelist:
-    with open(i, errors='ignore') as file:
-        data = json.load(file)
-        for j in data['items']:
-            title = j['snippet']['title']
-            title = str(title)
-
-            # Removing the .json characters of the file string
-            id = str(i)
-            id = id[:-5]
-
-            # Adding title
-            title1 = title+' '
-            # Put more weight on titles, in this case they weigh 3 times more than the text.
-            matrixdf2 = matrixdf.append({'youtubeVideoId': id, 'title': ntitle*title}, ignore_index=True)
-            matrixdf = matrixdf2
-
-
-directory2 = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption'
-os.chdir(directory2)
-filelist = os.listdir(directory2)
-
-nrow = len(matrixdf)
-print(nrow)  # Less than 1504
 
 for i in filelist:
     with open(i,errors='ignore') as file:
         textString = file.read().replace('/n', '')
+        qw = len(textString.split())
         words = word_tokenize(textString)
+
+        tp = percentage
 
         # Removing the .txt characters of the file string
         id = str(i)
@@ -61,13 +37,20 @@ for i in filelist:
 
         # Check for matching video id
         for k in range(0, nrow):
-            if id == matrixdf.loc[:, 'youtubeVideoId'].values[k]:
-                x = matrixdf.loc[k, 'title']
-                x = str(x)
-                words.append(x)  # Adding the titles to the captions
+            if id == df.loc[:, 'youtubeVideoId'].values[k]:
+                x = df.loc[k, 'title']
+                title = str(x)
 
-    # write into new file
-    new_path = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption title'
+                qx = len(title.split())
+
+                tl = tp*qw/(100-tp)
+                m = round(tl/qx)
+
+                for j in range(1,m):
+                    words.append(title)  # Adding the titles to the captions
+
+    # Write into new file
+    new_path = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/Caption title'
     new_text = ' '.join(words)
     file_name = os.path.join(new_path, i)
     f = open(file_name, 'w')
