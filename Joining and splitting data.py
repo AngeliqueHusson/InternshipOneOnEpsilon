@@ -13,14 +13,15 @@ from nltk import word_tokenize
 from sklearn.model_selection import train_test_split
 
 directory = os.getcwd()
-print(directory)
+directory = "C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/"
+os.chdir(directory)
 
 data = pd.read_csv("Data/newHashtags.csv")
 print(data.columns.ravel())  # In order to find titles of columns
 new_data = data[['youtubeVideoId', 'newHashtag']]
 
 # Choose your own directory here
-directory2 = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after clean 2'
+directory2 = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after stemming'
 os.chdir(directory2)
 filelist = os.listdir(directory2)
 
@@ -53,12 +54,13 @@ print(fulldf.count())  # Final dataset has less values?
 
 fulldf['y_id'] = fulldf['newHashtag'].factorize()[0]
 category_id_df = fulldf[['newHashtag', 'y_id']].drop_duplicates().sort_values('y_id')
-# category_to_id = dict(category_id_df.values)
-# id_to_category = dict(category_id_df[['y_id', 'newHashtag']].values)
+category_to_id = dict(category_id_df.values)
+id_to_category = dict(category_id_df[['y_id', 'newHashtag']].values)
 print(fulldf.head())
 
 # Save file as csv file
 os.chdir(directory)
+category_id_df.to_csv('Data/category_id_df.csv')
 fulldf.to_csv('Data/HashtagText.csv')  # Complete csv file with all information
 new.to_csv('Data/identifying_videos_without_text.csv')
 

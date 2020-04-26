@@ -16,8 +16,9 @@ from nltk.corpus import words
 findtxt = re.compile(r'[0-9a-zA-Z]+\.json')
 findtxt.findall(r'new.json*****new.json')
 
-# Data import
-directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/video_info'
+# Data import, set directory to your own directory
+#directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/video_info'
+directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/video_info'
 os.chdir(directory)
 filelist = os.listdir(directory)
 print(len(filelist))
@@ -80,7 +81,8 @@ for i in filelist:
             matrixdf2 = matrixdf.append({'youtubeVideoId': id, 'title': clean_title}, ignore_index=True)
             matrixdf = matrixdf2
 
-# Save as csv file
-directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data'
+# Save as csv file, in your own directory
+# directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data'
+directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data'
 os.chdir(directory)
 matrixdf.to_csv('titles.csv', index=False)

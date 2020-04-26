@@ -11,15 +11,17 @@ from nltk.tokenize import word_tokenize
 # Set percentage that the title should account for in feature selection
 percentage = 10
 
-# Retrieve file with titles
-directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data'
+# Retrieve file with titles (Change to your own directory)
+#directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data'
+directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data'
 os.chdir(directory)
 
 df = pd.read_csv("titles.csv")
 nrow = len(df)
 
 # Combining titles and captions
-directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/Caption after clean'
+#directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/Caption after clean'
+directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after clean'
 os.chdir(directory)
 filelist = os.listdir(directory)
 
@@ -49,12 +51,11 @@ for i in filelist:
                 for j in range(1,m):
                     words.append(title)  # Adding the titles to the captions
 
-    # Write into new file
-    new_path = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/Caption title'
+    # Write into new file (Change to your own directory)
+    # new_path = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data/Caption title'
+    new_path = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption title'
     new_text = ' '.join(words)
     file_name = os.path.join(new_path, i)
     f = open(file_name, 'w')
     f.write(new_text)
     f.close()
-
-

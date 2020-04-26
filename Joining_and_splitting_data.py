@@ -21,7 +21,7 @@ print(data.columns.ravel())  # In order to find titles of columns
 new_data = data[['youtubeVideoId', 'newHashtag']]
 
 # Choose your own directory here
-directory2 = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after clean 2'
+directory2 = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption after stemming'
 os.chdir(directory2)
 filelist = os.listdir(directory2)
 
