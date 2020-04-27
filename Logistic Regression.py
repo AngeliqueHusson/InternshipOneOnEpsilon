@@ -52,16 +52,21 @@ plt.xlabel('Predicted')
 plt.show()
 
 # Cross validation
+results = []
 
-entries = []
+for i in range(2,20):
+    entries = []
+    accuracies = cross_val_score(LogisticRegression(random_state=0), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)
+    model_name = "Logistic Regression"
 
-accuracies = cross_val_score(LogisticRegression(random_state=0), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy')
+    for fold_idx, accuracy in enumerate(accuracies):
+        entries.append(("", fold_idx, accuracy))
+    cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
+    results.append(cv_df.accuracy.mean())
 
-model_name = "Logistic Regression"
-
-for fold_idx, accuracy in enumerate(accuracies):
-  entries.append(("", fold_idx, accuracy))
-cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
+plt.plot(results)
+plt.show()
+print(results)
 
 sns.boxplot(x= model_name, y='accuracy', data=cv_df)
 sns.stripplot(x= model_name, y='accuracy', data=cv_df,

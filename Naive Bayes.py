@@ -60,13 +60,21 @@ plt.xlabel('Predicted')
 plt.show()
 
 # Cross validation
-entries = []
-accuracies = cross_val_score(MultinomialNB(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy')
-model_name = "Naive Bayes"
+results = []
 
-for fold_idx, accuracy in enumerate(accuracies):
-  entries.append(("", fold_idx, accuracy))
-cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
+for i in range(2,20):
+    entries = []
+    accuracies = cross_val_score(MultinomialNB(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)
+    model_name = "Naive Bayes"
+
+    for fold_idx, accuracy in enumerate(accuracies):
+        entries.append(("", fold_idx, accuracy))
+    cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
+    results.append(cv_df.accuracy.mean())
+
+plt.plot(results)
+plt.show()
+print(results)
 
 sns.boxplot(x=model_name, y='accuracy', data=cv_df)
 sns.stripplot(x=model_name, y='accuracy', data=cv_df, size=8, jitter=True, edgecolor="gray", linewidth=2)
