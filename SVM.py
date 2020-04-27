@@ -3,6 +3,7 @@ import os
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
+import matplotlib as plt1
 import seaborn as sns
 import numpy as np
 from sklearn import metrics
@@ -53,13 +54,21 @@ plt.xlabel('Predicted')
 plt.show()
 
 # Cross validation
-entries = []
-accuracies = cross_val_score(LinearSVC(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=11)
-model_name = "SVM"
+results = []
 
-for fold_idx, accuracy in enumerate(accuracies):
-  entries.append(("", fold_idx, accuracy))
-cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
+for i in range(2,20):
+    entries = []
+    accuracies = cross_val_score(LinearSVC(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)  # , cv=11
+    model_name = "SVM"
+
+    for fold_idx, accuracy in enumerate(accuracies):
+        entries.append(("", fold_idx, accuracy))
+    cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
+    results.append(cv_df.accuracy.mean())
+
+plt.plot(results)
+plt.show()
+print(results)
 
 sns.boxplot(x= model_name, y='accuracy', data=cv_df)
 sns.stripplot(x= model_name, y='accuracy', data=cv_df,

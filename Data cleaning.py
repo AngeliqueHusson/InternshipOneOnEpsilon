@@ -16,8 +16,8 @@ from nltk.corpus import words
 findtxt = re.compile(r'[0-9a-zA-Z]+\.txt')
 findtxt.findall(r'new.txt*****new.txt')
 
-os.chdir('C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption title/')
-filelist = os.listdir('C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption title/')
+os.chdir('C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption/')
+filelist = os.listdir('C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/Caption/')
 
 ### hash table implemtation of dictionary
 My_dict = {}
