@@ -21,7 +21,7 @@ The original data set contained many overlapping and related hashtags. As the nu
 ## Joining and splitting data
 With this method we combine the textfiles obtained with "add titles" with their corresponding new hashtag retrieved from "change hashtags" into one data file. After that, we split the data in a training and a test set which are all used with the classifiers described below.
 
-## Classification mesthods
+## Classification methods
 After running the files in the previous steps and obtaining the training, test and validation datasets the user can run several classification methods on this data. The methods Naive Bayes, Logistic Regression, Support vector machines and Random forest can be run in the corresponding python files. 
 
 ## Correlations
