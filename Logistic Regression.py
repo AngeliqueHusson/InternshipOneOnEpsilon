@@ -45,7 +45,7 @@ print(metrics.classification_report(validation['y_val'], predicted, target_names
 # Convert to latex table
 metrics_result = metrics.classification_report(validation['y_val'], predicted, target_names=target_names, output_dict=True)
 df = pd.DataFrame(metrics_result).transpose()
-df.to_latex('Latex/ResultsSLR.tex', index=True, float_format="%.3f")
+df.to_latex('Latex/ResultsLR.tex', index=True, float_format="%.3f")
 
 # Confusion matrix, does not work correctly yet
 conf_mat = confusion_matrix(validation['y_val'], predicted)

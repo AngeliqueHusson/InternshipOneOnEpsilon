@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5bb12ec9-ce3f-45df-9134-9ab76641a139" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SVM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Latex/ResultsSLR.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logistic Regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logistic Regression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
       <recent name="C:\Users\s157165\Documents\Jaar 5 2019-2020 Master\Internship Australia\InternshipOneOnEpsilon" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Random Forest">
+  <component name="RunManager" selected="Python.Logistic Regression">
     <configuration name="Joining and splitting data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="InternshipOneOnEpsilon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,8 +149,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Random Forest" />
         <item itemvalue="Python.Logistic Regression" />
+        <item itemvalue="Python.Random Forest" />
         <item itemvalue="Python.Naive Bayes" />
         <item itemvalue="Python.SVM" />
         <item itemvalue="Python.Joining and splitting data" />
@@ -191,22 +192,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="794" y="164" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587613383659" />
-    <state width="1081" height="319" key="GridCell.Tab.0.bottom" timestamp="1588038290688">
+    <state width="1081" height="319" key="GridCell.Tab.0.bottom" timestamp="1588038974063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1081" height="319" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588038290688" />
-    <state width="1081" height="319" key="GridCell.Tab.0.center" timestamp="1588038290688">
+    <state width="1081" height="319" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588038974063" />
+    <state width="1081" height="319" key="GridCell.Tab.0.center" timestamp="1588038974062">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1081" height="319" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588038290688" />
-    <state width="1081" height="319" key="GridCell.Tab.0.left" timestamp="1588038290688">
+    <state width="1081" height="319" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588038974062" />
+    <state width="1081" height="319" key="GridCell.Tab.0.left" timestamp="1588038974062">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1081" height="319" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588038290688" />
-    <state width="1081" height="319" key="GridCell.Tab.0.right" timestamp="1588038290688">
+    <state width="1081" height="319" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588038974062" />
+    <state width="1081" height="319" key="GridCell.Tab.0.right" timestamp="1588038974062">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1081" height="319" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588038290688" />
+    <state width="1081" height="319" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588038974062" />
     <state width="746" height="261" key="GridCell.Tab.1.bottom" timestamp="1586399525729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
