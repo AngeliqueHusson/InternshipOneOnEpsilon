@@ -1,11 +1,10 @@
 """
     Naive Bayes Method using the tf-idf feature extraction method
-    This file uses as input the file created in the 'JoinTextTohashtag.py' file.
+    This file uses as input the file created in the 'Joining and splitting data.py' file.
 
     @authors Angelique Husson & Nikki Leijnse
 """
 
-# Naive Bayes method
 import os
 import pandas as pd
 from sklearn.naive_bayes import MultinomialNB
@@ -23,8 +22,8 @@ from Feature_extraction import x_train_tfidf1, x_train_tfidf, vectorizer
 directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data'
 os.chdir(directory)
 
-### Naive Bayes
 # Feature space = tf - idf method
+# From import x_train_tfidf1, x_train_tfidf, vectorizer, vectorizer1
 
 # Obtaining training and validation data
 training = pd.read_csv("training.csv")
@@ -85,4 +84,4 @@ sns.boxplot(x=model_name, y='accuracy', data=cv_df)
 sns.stripplot(x=model_name, y='accuracy', data=cv_df, size=8, jitter=True, edgecolor="gray", linewidth=2)
 plt.show()
 
-print("The accuracy of the Naive Bayes model using Cross Validation is: " + str(cv_df.accuracy.mean()))
+print("The maximum accuracy of the Naive Bayes model using Cross Validation is: " + str(max(results)))

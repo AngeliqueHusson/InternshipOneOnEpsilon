@@ -9,7 +9,7 @@ import pandas as pd
 from nltk.tokenize import word_tokenize
 
 # Set percentage that the title should account for in feature selection
-percentage = 10
+percentage = 20
 
 # Retrieve file with titles (Change to your own directory)
 #directory = 'C:/Users/Nikki/Desktop/Internship AM/Input data classification/YouTube-video-info-download-including-title-channel-automatically-generated-subtitles--master/Data'

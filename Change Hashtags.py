@@ -21,7 +21,7 @@ df_new = df[['youtubeVideoId', 'hashTags']]
 
 # Read excel
 os.chdir('C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data/')
-data_df = pd.read_excel('Hashtags.xlsx', sheet_name='Blad1')
+data_df = pd.read_excel('Hashtags.xlsx', sheet_name='Sheet2')
 # Write initial hashtags into file
 df_new.to_csv('InitialHashtags.csv')
 
@@ -55,11 +55,13 @@ for i in range(0,nc):
             new[m][new['hash_'+str(i)] == x] = columns[j]
 
 print(new)
-new.to_csv('tijdelijk.csv')
 
 new1 = new.iloc[:,nc:2*nc]
 new2 = new1.mode(axis=1).iloc[:,0]
 print(new2)
+
+new["newHashtag"] = new2
+new.to_csv('tijdelijk.csv')
 
 df_new['newHashtag'] = new2
 

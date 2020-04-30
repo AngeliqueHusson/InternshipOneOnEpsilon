@@ -1,4 +1,10 @@
-# Logistic Regression method
+"""
+    Random Forest Method using the tf-idf feature extraction method
+    This file uses as input the file created in the 'Joining and splitting data.py' file.
+
+    @authors Angelique Husson & Nikki Leijnse
+"""
+
 import os
 import pandas as pd
 from sklearn.metrics import confusion_matrix
@@ -15,8 +21,8 @@ from Feature_extraction import x_train_tfidf, vectorizer
 directory = 'C:/Users/s157165/Documents/Jaar 5 2019-2020 Master/Internship Australia/InternshipOneOnEpsilon/Data'
 os.chdir(directory)
 
-### Logistic Regression
-# Feature space = tf - idf method
+# Feature extraction method = tf - idf method
+# From import x_train_tfidf1, x_train_tfidf, vectorizer, vectorizer1
 
 # Obtaining training and validation data
 training = pd.read_csv("training.csv")
