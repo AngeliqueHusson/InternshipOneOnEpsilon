@@ -31,17 +31,37 @@ nrow = data_df.count()
 ncol = len(columns)
 
 # Only use last hashtag
-df_new['chosenHashtag'] = df_new['hashTags'].str[-1]
-df_new['newHashtag'] = np.nan  # New hashtag
+new = df_new.hashTags.apply(pd.Series).add_prefix('hash_')
+nc = new.shape[1]
+print(nc)
 
-for j in range(0, ncol):  # Columns
-    for k in range(0, nrow[j]):  # Rows in each column
-        x = data_df.loc[:, columns[j]].values[k]
-        x = str(x)
+for m in range(0,nc):
+    i = str(m)
+    new[i] = np.nan
+# new1 = new.append(np.nan)
 
-        # If a hashtag in our long list matches one in the our excel file,
-        # it sets this hashtag to the corresponding column in our excel file
-        df_new['newHashtag'][df_new['chosenHashtag'] == x] = columns[j]
+print(new)
+
+for i in range(0,nc):
+    for j in range(0, ncol):  # Columns
+        for k in range(0, nrow[j]):  # Rows in each column
+            x = data_df.loc[:, columns[j]].values[k]
+            x = str(x)
+
+            # If a hashtag in our long list matches one in the our excel file,
+            # it sets this hashtag to the corresponding column in our excel file
+            # print(new.iloc[:,i])
+            m = str(i)
+            new[m][new['hash_'+str(i)] == x] = columns[j]
+
+print(new)
+new.to_csv('tijdelijk.csv')
+
+new1 = new.iloc[:,nc:2*nc]
+new2 = new1.mode(axis=1).iloc[:,0]
+print(new2)
+
+df_new['newHashtag'] = new2
 
 print('Number of rows')
 print(df_new.count())
