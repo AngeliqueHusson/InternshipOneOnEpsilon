@@ -32,8 +32,8 @@ category_id_df = pd.read_csv("category_id_df.csv")
 # Feature extraction
 # From import x_train_tfidf, vectorizer
 
-# Logistic Regression
-clf = RandomForestClassifier(n_estimators=200, max_depth=3, random_state=0).fit(x_train_tfidf, training['y_train'])
+# Random forest
+clf = RandomForestClassifier(n_estimators=100, max_depth=20, random_state=0).fit(x_train_tfidf, training['y_train'])
 predicted = clf.predict(vectorizer.transform(validation['x_val']))
 print(predicted == validation['y_val'])
 print(predicted[:20])
