@@ -32,9 +32,16 @@ category_id_df = pd.read_csv("category_id_df.csv")
 # Feature extraction
 # From import x_train_tfidf, vectorizer
 
+# hyperpar = []
+
 # Random forest
-clf = RandomForestClassifier(n_estimators=100, max_depth=20, random_state=0).fit(x_train_tfidf, training['y_train'])
+#for i in range(1,200, 2):
+clf = RandomForestClassifier(n_estimators=100, max_depth=39, random_state=0).fit(x_train_tfidf, training['y_train'])
 predicted = clf.predict(vectorizer.transform(validation['x_val']))
+result = clf.score(vectorizer.transform(validation['x_val']), validation['y_val'], sample_weight=None)
+#    hyperpar.append(result)
+#plt.plot(hyperpar)
+
 print(predicted == validation['y_val'])
 print(predicted[:20])
 
