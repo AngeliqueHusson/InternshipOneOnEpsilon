@@ -11,6 +11,7 @@ from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import math
 from sklearn import metrics
 from sklearn.ensemble import RandomForestClassifier
 from Feature_extraction import x_train_tfidf, vectorizer
@@ -32,16 +33,32 @@ category_id_df = pd.read_csv("category_id_df.csv")
 # Feature extraction
 # From import x_train_tfidf, vectorizer
 
-# hyperpar = []
-
+estimate = []
+max_features = round(math.sqrt(x_train_tfidf.shape[1]))  # max_features = sqrt(number of features)
 # Random forest
-#for i in range(1,200, 2):
-clf = RandomForestClassifier(n_estimators=100, max_depth=39, random_state=0).fit(x_train_tfidf, training['y_train'])
-predicted = clf.predict(vectorizer.transform(validation['x_val']))
-result = clf.score(vectorizer.transform(validation['x_val']), validation['y_val'], sample_weight=None)
-#    hyperpar.append(result)
-#plt.plot(hyperpar)
+# Tuning Hyperparameters
+# axis = range(10, 1000, 10)
+# for i in axis:
+#     clf = RandomForestClassifier(n_estimators= i, max_depth = max_depth, random_state = 0).fit(x_train_tfidf, training['y_train'])
+#     estimate.append(clf.score(vectorizer.transform(validation['x_val']), validation['y_val'], sample_weight=None))
+#
+# plt.xticks(range(0,100,10), range(10,1000,100))
+# plt.xlabel('n_estimators')
+# plt.ylabel('Accuracy')
+# plt.plot(estimate)
+# n_estimators = estimate.index(max(estimate))*10  # Set as high as you can afford
+#
+# # summarizing finding:
+# print('Index of best Accuracy: %.3f' % n_estimators)
+# print('Best Accuracy: %.3f' % max(estimate))
 
+
+# Prune the tree a little bit it can get better
+# Best found result n_estimators = 100, max_depth = 39, accuracy = 0.59. max_depth is expected to be good if equal sqrt(#features)
+# Generally the tree gets better if you prune away the bottom and make n_estimators as high as possible
+clf = RandomForestClassifier(n_estimators=100, oob_score=True, max_depth=39, random_state=0).fit(x_train_tfidf, training['y_train'])
+predicted = clf.predict(vectorizer.transform(validation['x_val']))
+print("The out of bag error equals: %.3f" % clf.oob_score_)
 print(predicted == validation['y_val'])
 print(predicted[:20])
 
