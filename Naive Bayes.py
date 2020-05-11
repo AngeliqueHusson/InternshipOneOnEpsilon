@@ -35,7 +35,7 @@ category_id_df = pd.read_csv("category_id_df.csv")
 # From import x_train_tfidf1, x_train_tfidf, vectorizer, vectorizer1
 
 # Naive Bayes model
-clf = MultinomialNB().fit(x_train_tfidf, training['y_train'])
+clf = MultinomialNB(alpha=0).fit(x_train_tfidf, training['y_train'])
 predicted = clf.predict(vectorizer.transform(validation['x_val']))
 print(predicted == validation['y_val'])
 print(predicted[:20])
@@ -66,15 +66,18 @@ plt.show()
 # Cross validation
 results = []
 
-for i in range(2,20):
+for i in range(2, 50, 2):
     entries = []
-    accuracies = cross_val_score(MultinomialNB(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)
+    accuracies = cross_val_score(MultinomialNB(alpha=0.1), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)
     model_name = "Naive Bayes"
 
     for fold_idx, accuracy in enumerate(accuracies):
         entries.append(("", fold_idx, accuracy))
     cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
     results.append(cv_df.accuracy.mean())
+
+    if i==20: # Final model choice
+        finalacc = cv_df.accuracy.mean()
 
 plt.plot(results)
 plt.show()
@@ -85,3 +88,6 @@ sns.stripplot(x=model_name, y='accuracy', data=cv_df, size=8, jitter=True, edgec
 plt.show()
 
 print("The maximum accuracy of the Naive Bayes model using Cross Validation is: " + str(max(results)))
+
+# Final model choice
+print("The final accuracy of the Naive Bayes model using Cross Validation is:" + str(finalacc))

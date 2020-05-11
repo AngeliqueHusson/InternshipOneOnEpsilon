@@ -34,7 +34,7 @@ category_id_df = pd.read_csv("category_id_df.csv")
 # From import x_train_tfidf1, x_train_tfidf, vectorizer, vectorizer1
 
 # Logistic Regression
-clf = LogisticRegression(random_state=0).fit(x_train_tfidf, training['y_train'])
+clf = LogisticRegression(solver='saga', C=6, random_state=0).fit(x_train_tfidf, training['y_train'])
 predicted = clf.predict(vectorizer.transform(validation['x_val']))
 print(predicted == validation['y_val'])
 print(predicted[:20])
@@ -74,6 +74,9 @@ for i in range(2,20):
         entries.append(("", fold_idx, accuracy))
     cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
     results.append(cv_df.accuracy.mean())
+
+    if i==35: # Final model choice
+        finalacc = cv_df.accuracy.mean()
 
 plt.plot(results)
 plt.show()

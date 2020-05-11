@@ -12,6 +12,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import math
+from skopt.space import Integer
+from skopt.utils import use_named_args
+from skopt import gp_minimize
 from sklearn import metrics
 from sklearn.ensemble import RandomForestClassifier
 from Feature_extraction import x_train_tfidf, vectorizer
@@ -37,28 +40,31 @@ estimate = []
 max_features = round(math.sqrt(x_train_tfidf.shape[1]))  # max_features = sqrt(number of features)
 # Random forest
 # Tuning Hyperparameters
-# axis = range(10, 1000, 10)
-# for i in axis:
-#     clf = RandomForestClassifier(n_estimators= i, max_depth = max_depth, random_state = 0).fit(x_train_tfidf, training['y_train'])
-#     estimate.append(clf.score(vectorizer.transform(validation['x_val']), validation['y_val'], sample_weight=None))
-#
-# plt.xticks(range(0,100,10), range(10,1000,100))
-# plt.xlabel('n_estimators')
-# plt.ylabel('Accuracy')
-# plt.plot(estimate)
-# n_estimators = estimate.index(max(estimate))*10  # Set as high as you can afford
-#
-# # summarizing finding:
-# print('Index of best Accuracy: %.3f' % n_estimators)
-# print('Best Accuracy: %.3f' % max(estimate))
+search_space = [Integer(1, 500, name='n_estimators'), Integer(1,100, name='max_depth')]
 
+@use_named_args(search_space)
+def evaluate_model(**params):
+    model = RandomForestClassifier() # random_state=0
+    model.set_params(**params)
+    clf = model.fit(x_train_tfidf, training['y_train'])
+    predicted = clf.predict(vectorizer.transform(validation['x_val']))
+    estimate = clf.score(vectorizer.transform(validation['x_val']), validation['y_val'], sample_weight=None)
+    return 1-estimate
+
+result = gp_minimize(evaluate_model, search_space)
+
+# summarizing finding:
+print('Best Accuracy: %.3f' % (1-result.fun))
+print('Best Parameters: n_estimators=%d, max_depth=%d' % (result.x[0], result.x[1]))
+# Best found result n_estimators = 100, max_depth = 39, accuracy = 0.59. max_depth is expected to be good if equal sqrt(#features)
 
 # Prune the tree a little bit it can get better
 # Best found result n_estimators = 100, max_depth = 39, accuracy = 0.59. max_depth is expected to be good if equal sqrt(#features)
 # Generally the tree gets better if you prune away the bottom and make n_estimators as high as possible
-clf = RandomForestClassifier(n_estimators=100, oob_score=True, max_depth=39, random_state=0).fit(x_train_tfidf, training['y_train'])
+# clf = RandomForestClassifier(n_estimators=100, oob_score=True, max_depth=39, random_state=0).fit(x_train_tfidf, training['y_train'])
+clf = RandomForestClassifier(n_estimators=result.x[0],max_depth =result.x[1], random_state=77).fit(x_train_tfidf, training['y_train'])
 predicted = clf.predict(vectorizer.transform(validation['x_val']))
-print("The out of bag error equals: %.3f" % clf.oob_score_)
+#print("The out of bag error equals: %.3f" % clf.oob_score_)
 print(predicted == validation['y_val'])
 print(predicted[:20])
 

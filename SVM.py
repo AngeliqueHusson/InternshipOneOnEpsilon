@@ -33,7 +33,7 @@ category_id_df = pd.read_csv("category_id_df.csv")
 # From import x_train_tfidf1, x_train_tfidf, vectorizer, vectorizer1
 
 # Support vector machine method
-clf = LinearSVC().fit(x_train_tfidf, training['y_train'])
+clf = LinearSVC(C=1.2).fit(x_train_tfidf, training['y_train'])
 predicted = clf.predict(vectorizer.transform(validation['x_val']))
 print(predicted == validation['y_val'])
 print(predicted[:20])
@@ -65,15 +65,17 @@ plt.show()
 # Cross validation
 results = []
 
-for i in range(10,30):
+for i in range(10,50,2):
     entries = []
-    accuracies = cross_val_score(LinearSVC(), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)  # , cv=11
+    accuracies = cross_val_score(LinearSVC(C=1.2), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)  # , cv=11
     model_name = "SVM"
 
     for fold_idx, accuracy in enumerate(accuracies):
         entries.append(("", fold_idx, accuracy))
     cv_df = pd.DataFrame(entries, columns=[model_name, 'fold_idx', 'accuracy'])
     results.append(cv_df.accuracy.mean())
+    if i==40: # Final model choice
+        finalacc = cv_df.accuracy.mean()
 
 plt.plot(results)
 plt.show()
@@ -87,3 +89,6 @@ sns.stripplot(x= model_name, y='accuracy', data=cv_df,
 plt.show()
 
 print("The maximum accuracy of the Support Vector Machine model using Cross Validation is: " + str(max(results)))
+
+# Final model choice
+print("The final accuracy of the Support Vector Machine model using Cross Validation is:" + str(finalacc))
