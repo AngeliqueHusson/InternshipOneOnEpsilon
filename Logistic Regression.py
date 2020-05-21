@@ -65,7 +65,7 @@ plt.show()
 # Cross validation
 results = []
 
-for i in range(2,20):
+for i in range(34,36):
     entries = []
     accuracies = cross_val_score(LogisticRegression(random_state=0), x_train_tfidf1, trainingBig['y_trainBig'], scoring='accuracy', cv=i)
     model_name = "Logistic Regression"
