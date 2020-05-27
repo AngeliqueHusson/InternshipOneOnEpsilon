@@ -34,6 +34,8 @@ category_id_df = pd.read_csv("category_id_df.csv")
 
 # Support vector machine method
 clf = LinearSVC(C=1.2).fit(x_train_tfidf1, trainingBig['y_trainBig'])
+print("This is the CLF")
+print(clf)
 predicted = clf.predict(vectorizer1.transform(test['x_test']))
 print(predicted == test['y_test'])
 print(predicted[:20])

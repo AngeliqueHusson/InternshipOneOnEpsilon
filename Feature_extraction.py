@@ -13,6 +13,7 @@ os.chdir(directory)
 # Obtaining training and validation data
 training = pd.read_csv("training.csv")
 trainingBig = pd.read_csv("trainingbig.csv")
+fullData = pd.read_csv("HashtagText.csv")
 
 # tf - idf method original
 vectorizer = CountVectorizer()
@@ -24,6 +25,11 @@ vectorizer1 = CountVectorizer()
 x_train_counts1 = vectorizer1.fit_transform(trainingBig['x_trainBig'])
 tfidf_transformer1 = TfidfTransformer()
 x_train_tfidf1 = tfidf_transformer1.fit_transform(x_train_counts1)
+
+vectorizer2 = CountVectorizer()
+x_train_counts2 = vectorizer2.fit_transform(fullData['text'])
+tfidf_transformer2 = TfidfTransformer()
+x_train_tfidf2 = tfidf_transformer2.fit_transform(x_train_counts2)
 
 # tf - idf method word level
 #vectorizer = TfidfVectorizer(analyzer='word', token_pattern=r'\w{1,}', max_features=5000)
