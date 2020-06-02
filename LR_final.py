@@ -5,13 +5,13 @@
     @authors Angelique Husson & Nikki Leijnse
 """
 import os
+import pickle
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from sklearn import metrics
-from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LogisticRegression
 from Feature_extraction import x_train_tfidf1, vectorizer1
 
@@ -36,13 +36,17 @@ predicted = clf.predict(vectorizer1.transform(test['x_test']))
 print(predicted == test['y_test'])
 print(predicted[:20])
 
+# Saving Logistic Regression model for webpage
+filename = 'Webpage/finalized_model_LR.sav'
+pickle.dump(clf, open(filename, 'wb'))
+
 # Printing accuracies
 result = clf.score(vectorizer1.transform(test['x_test']), test['y_test'], sample_weight=None)
 print("The score of Multinomial Logistic Regression is: " + str(result))
 # One label is not used, different length
-id_to_category = dict(category_id_df[['y_id', 'newHashtag']].values) # Dictionary connecting id to hashtag
+id_to_category = dict(category_id_df[['y_id', 'newHashtag']].values)  # Dictionary connecting id to hashtag
 keys = np.unique(test['y_test'])  # Only get existing id's
-target_names = list( map(id_to_category.get, keys))  # Connect existing id's to hashtags
+target_names = list(map(id_to_category.get, keys))  # Connect existing id's to hashtags
 print(metrics.classification_report(test['y_test'], predicted, target_names=target_names))
 
 # Convert to latex table
@@ -52,7 +56,7 @@ df.to_latex('Latex/ResultsLR_Final.tex', index=True, float_format="%.3f")
 
 # Confusion matrix, does not work correctly yet
 conf_mat = confusion_matrix(test['y_test'], predicted)
-fig, ax = plt.subplots(figsize=(10,10))
+fig, ax = plt.subplots(figsize=(10, 10))
 sns.heatmap(conf_mat, annot=True, fmt='d',
             xticklabels=category_id_df.newHashtag.values, yticklabels=category_id_df.newHashtag.values)
 plt.ylabel('Actual')

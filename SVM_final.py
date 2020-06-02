@@ -6,6 +6,7 @@
 """
 
 import os
+import pickle
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
@@ -39,6 +40,10 @@ print(clf)
 predicted = clf.predict(vectorizer1.transform(test['x_test']))
 print(predicted == test['y_test'])
 print(predicted[:20])
+
+# Saving Support Vector machine model for webpage
+filename = 'Webpage/finalized_model_SVM.sav'
+pickle.dump(clf, open(filename, 'wb'))
 
 # Printing accuracies
 result = clf.score(vectorizer1.transform(test['x_test']), test['y_test'], sample_weight=None)

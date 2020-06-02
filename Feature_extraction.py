@@ -3,6 +3,7 @@
 """
 import os
 import pandas as pd
+import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer, TfidfTransformer, CountVectorizer
 
 # Directory and data import
@@ -25,6 +26,9 @@ vectorizer1 = CountVectorizer()
 x_train_counts1 = vectorizer1.fit_transform(trainingBig['x_trainBig'])
 tfidf_transformer1 = TfidfTransformer()
 x_train_tfidf1 = tfidf_transformer1.fit_transform(x_train_counts1)
+
+filename = 'Webpage/vectorizer1.sav'
+pickle.dump(vectorizer1, open(filename, 'wb'))
 
 vectorizer2 = CountVectorizer()
 x_train_counts2 = vectorizer2.fit_transform(fullData['text'])

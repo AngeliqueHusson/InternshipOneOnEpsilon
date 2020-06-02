@@ -7,6 +7,7 @@
 
 # Neural Network method
 import os
+import pickle
 import pandas as pd
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import Sequential
@@ -18,7 +19,6 @@ from keras.preprocessing.text import Tokenizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
-import numpy as np
 
 # Directory and data import
 # Change to your own directory
@@ -85,21 +85,14 @@ NEURONS_LSTM = round((2/3)*(200+11))
 epochs = 100
 batch_size = 32
 
-# for j in [0.2,0.3,0.4]:
-accuracy = []
-for i in range(0,1):
-    model = RNN(33, NEURONS_LSTM, 0.3, 0.4, 0.3)
-    history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size,validation_split=0.1,callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
-    acc = model.evaluate(X_test, Y_test)
-    print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(acc[0], acc[1]))
-    accuracy.append(acc[1])
+model = RNN(33, NEURONS_LSTM, 0.3, 0.4, 0.3)
+history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size,validation_split=0.1,callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
+acc = model.evaluate(X_test, Y_test)
+print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(acc[0], acc[1]))
 
-print("The accuracies of the ..-th maxlength are:")
-print(accuracy)
-print(np.mean(accuracy))
-
-# print(X_train.shape, Y_train.shape)
-# print(X_test.shape, Y_test.shape)
+# Saving Neural networks model for webpage
+filename = 'Webpage/finalized_model_RNN.sav'
+pickle.dump(model, open(filename, 'wb'))
 
 # plt.title('Loss')
 plt.plot(history.history['loss'], label='train')
