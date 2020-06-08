@@ -85,14 +85,20 @@ NEURONS_LSTM = round((2/3)*(200+11))
 epochs = 100
 batch_size = 32
 
-model = RNN(33, NEURONS_LSTM, 0.3, 0.4, 0.3)
+print(X_test)
+
+model = RNN(33, NEURONS_LSTM, 0.4, 0.4, 0.3)
 history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size,validation_split=0.1,callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
 acc = model.evaluate(X_test, Y_test)
 print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(acc[0], acc[1]))
 
 # Saving Neural networks model for webpage
-filename = 'Webpage/finalized_model_RNN.sav'
-pickle.dump(model, open(filename, 'wb'))
+# Create a HDF5 file
+model.model.save('Webpage/finalized_model_RNN.h5')
+
+# Save Tokenizer or vocabulary
+with open('Webpage/tokenizerRNN.pickle', 'wb') as handle:
+    pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 # plt.title('Loss')
 plt.plot(history.history['loss'], label='train')
