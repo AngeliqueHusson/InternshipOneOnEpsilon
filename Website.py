@@ -89,6 +89,8 @@ class Classification:
         text = ' '.join(text1)
         text = str(text)
         global proba
+        global label2
+        global proba2
 
         if method == "Support Vector Machine":
             loaded_model = pickle.load(open(
@@ -121,8 +123,14 @@ class Classification:
             result = loaded_model.predict_classes(text)
             result = id_to_category[result[0]]
 
-            proba = loaded_model.predict_proba(text)
-            proba = round(max(max(proba)) * 100)
+            proba1 = max(loaded_model.predict_proba(text))
+            proba = round(max(proba1)*100)
+            proba1 = list(proba1)
+            # print(proba1)
+            proba2 = sorted(proba1)[9]  # The second highest value
+            label2 = proba1.index(proba2)  # Index of the second highest value
+            label2 = id_to_category[label2]  # Corresponding category belonging to this second highest value
+            proba2 = round(proba2*100)
         else:
             loaded_model = pickle.load(open(
                 'C:/Users/s157165\Documents/Jaar 5 2019-2020 Master/Internship Australia/MathClassification/cgi-bin/finalized_model_LR.sav',
@@ -133,8 +141,14 @@ class Classification:
             result = loaded_model.predict(vectorizer1.transform([text]))
             result = id_to_category[result[0]]
 
-            proba = loaded_model.predict_proba(vectorizer1.transform([text]))
-            proba = round(max(max(proba)) * 100)
+            proba1 = max(loaded_model.predict_proba(vectorizer1.transform([text])))
+            proba = round(max(proba1)*100)
+            proba1 = list(proba1)
+            # print(proba1)
+            proba2 = sorted(proba1)[9]  # The second highest value
+            label2 = proba1.index(proba2)  # Index of the second highest value
+            label2 = id_to_category[label2]  # Corresponding category belonging to this second highest value
+            proba2 = round(proba2*100)
 
         return result
 
@@ -186,8 +200,7 @@ else:
     if subject != "Support Vector Machine":
         p = "%"
         print("<p> The %s algorithm is %s %s sure that this is the correct label.</p> " % (subject, proba, p))
-    # print("<h2> Selected Subject is %s</h2>" % subject)
+        print("<p></p>")
+        print("<p> If you do not agree with this result, it might be interesting to take a look at the second highest ranked label. The second highest ranked label is category \"%s\", the %s algorithm is %s %s sure that this is the correct label. </p>" % (label2, subject, proba2, p))
     # print("</body>")
     # print("</html>")
-
-    # print(str(webs))
