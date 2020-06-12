@@ -19,6 +19,7 @@ from keras.preprocessing.text import Tokenizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
+import numpy as np
 
 # Directory and data import
 # Change to your own directory
@@ -84,13 +85,17 @@ X_test = pad_sequences(X_test, maxlen=500)
 NEURONS_LSTM = round((2/3)*(200+11))
 epochs = 100
 batch_size = 32
+accuracy = []
 
-print(X_test)
+for i in range(0,5):
+    model = RNN(33, NEURONS_LSTM, 0.4, 0.4, 0.3)
+    history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size,validation_split=0.1,callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
+    acc = model.evaluate(X_test, Y_test)
+    print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(acc[0], acc[1]))
+    accuracy.append(acc[1])
 
-model = RNN(33, NEURONS_LSTM, 0.4, 0.4, 0.3)
-history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size,validation_split=0.1,callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
-acc = model.evaluate(X_test, Y_test)
-print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(acc[0], acc[1]))
+print(accuracy)
+print("The mean accuracy is: %s" % np.mean(accuracy))
 
 # Saving Neural networks model for webpage
 # Create a HDF5 file

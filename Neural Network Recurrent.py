@@ -71,27 +71,28 @@ def RNN(EMBEDDING_DIM, NEURONS_LSTM, dropoutLSTM, dropoutLSTMR, dropout):
 # Model and parameter settings
 # Output model
 Y = pd.get_dummies(trainingBig["y_trainBig"])
+maxlen = 500
 
 X = tokenizer.texts_to_sequences(trainingBig["x_trainBig"])
-X = pad_sequences(X, maxlen=200)
+X = pad_sequences(X, maxlen=maxlen)
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.20, random_state=12)
 
-NEURONS_LSTM = round((2/3)*(200+11))
+NEURONS_LSTM = round((2/3)*(maxlen+11))
+print(NEURONS_LSTM)
 epochs = 100
+
 batch_size = 32
+# accuracy = []
+# for i in range(0,5):
+model = RNN(33, NEURONS_LSTM, 0.4, 0.4, 0.3)
+history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size,validation_split=0.1,callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
+acc = model.evaluate(X_test, Y_test)
+print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(acc[0], acc[1]))
+# accuracy.append(acc[1])
 
-# for j in [0.2,0.3,0.4]:
-accuracy = []
-for i in range(0,3):
-    model = RNN(33, NEURONS_LSTM, 0.3, 0.4, 0.3)
-    history = model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size,validation_split=0.1,callbacks=[EarlyStopping(monitor='val_loss', patience=3, min_delta=0.0001)])
-    acc = model.evaluate(X_test, Y_test)
-    print('Test set\n  Loss: {:0.3f}\n  Accuracy: {:0.3f}'.format(acc[0], acc[1]))
-    accuracy.append(acc[1])
-
-print("The accuracies of the ..-th maxlength are:")
-print(accuracy)
-print(np.mean(accuracy))
+# print("The accuracies of the runs are:")
+# print(accuracy)
+# print("The mean accuracy is %s" % (np.mean(accuracy)))
 
 # print(X_train.shape, Y_train.shape)
 # print(X_test.shape, Y_test.shape)
