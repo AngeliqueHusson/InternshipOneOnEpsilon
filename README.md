@@ -28,7 +28,8 @@ After running the files in the previous steps and obtaining the training, test a
 In order to see the most correlated words for each hashtag or label, the correlations file can be run. This file outputs for each hashtag the two most important words. 
 
 ## Website
-The resulting classification algorithms are saved as pickled files in the directory 'Data/Webpage'. These are used in order to create a website that shows the functionalities of these classification algorithms. The static version of this website can be seen at: https://angeliquehusson.github.io/MathClassification/ .
+The resulting classification algorithms are saved as pickled files in the directory 'Data/Webpage'. These are used in order to create a website that shows the functionalities of these classification algorithms. There two python files 'Website.py' and 'WebsiteURL.py' can use the implemented algorithms to make predictions of users input. The static version of this website can be seen at: https://angeliquehusson.github.io/MathClassification/ .
 The website that has working interactive components is hosted on a server and can temporarily be seen at MathClassification.win.tue.nl
 The code used to create this website can be seen in repository: https://github.com/AngeliqueHusson/MathClassificationWebsite .
+
 
