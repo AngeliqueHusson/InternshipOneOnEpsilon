@@ -22,7 +22,14 @@ The original data set contained many overlapping and related hashtags. As the nu
 With this method we combine the textfiles obtained with "add titles" with their corresponding new hashtag retrieved from "change hashtags" into one data file. After that, we split the data in a training and a test set which are all used with the classifiers described below.
 
 ## Classification methods
-After running the files in the previous steps and obtaining the training, test and validation datasets the user can run several classification methods on this data. The methods Naive Bayes, Logistic Regression, Support vector machines and Random forest can be run in the corresponding python files. 
+After running the files in the previous steps and obtaining the training, test and validation datasets the user can run several classification methods on this data. The methods Naive Bayes, Logistic Regression, Support vector machine, Random Forest and a Recurrent Neural Network can be run in the corresponding python files. The files with '_final' at the end of the file are used on the test data.
 
 ## Correlations
 In order to see the most correlated words for each hashtag or label, the correlations file can be run. This file outputs for each hashtag the two most important words. 
+
+## Website
+The resulting classification algorithms are saved as pickled files in the directory 'Data/Webpage'. These are used in order to create a website that shows the functionalities of these classification algorithms. There two python files 'Website.py' and 'WebsiteURL.py' can use the implemented algorithms to make predictions of users input. The static version of this website can be seen at: https://angeliquehusson.github.io/MathClassification/ .
+The website that has working interactive components is hosted on a server and can temporarily be seen at MathClassification.win.tue.nl
+The code used to create this website can be seen in repository: https://github.com/AngeliqueHusson/MathClassificationWebsite .
+
+
