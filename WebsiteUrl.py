@@ -5,7 +5,7 @@ import cgi, cgitb
 cgitb.enable()
 import string
 import pickle
-from nltk.corpus import stopwords, words
+from nltk.corpus import stopwords
 from nltk.corpus import words
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize

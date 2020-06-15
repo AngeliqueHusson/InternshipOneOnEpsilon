@@ -3,18 +3,15 @@
 import string
 import pickle
 import cgi, cgitb
-from nltk.corpus import stopwords, words
+from nltk.corpus import stopwords
 from nltk.corpus import words
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
 cgitb.enable()
-import keras
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
-import pandas as pd
-from numpy import array
 
 
 class Classification:
