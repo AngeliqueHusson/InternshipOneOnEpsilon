@@ -32,4 +32,7 @@ The resulting classification algorithms are saved as pickled files in the direct
 The website that has working interactive components is hosted on a server and can temporarily be seen at MathClassification.win.tue.nl
 The code used to create this website can be seen in repository: https://github.com/AngeliqueHusson/MathClassificationWebsite .
 
+## Learning curves and sample size prediction
+In order to determine the required sample size for a certain accuracy, one could create the learning curve of the classifier. This means that we plot the training accuracy against the validation accuracy for different sample sizes. Once we have obtained this learning curve, we can fit a power function to the validation curve and predict the number of samples needed to obtain a certain accuracy. 
+
 
